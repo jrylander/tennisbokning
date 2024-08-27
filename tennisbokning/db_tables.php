@@ -2,32 +2,34 @@
 
 namespace cc\rylander\tennisbokning;
 
-require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+add_action( 'plugins_loaded', __NAMESPACE__ . '\db_install' );
 
-global $wpdb;
+function db_install()
+{
+    $db_version = '1.1';
 
-$charset_collate = $wpdb->get_charset_collate();
+    $version_setting = __NAMESPACE__ . 'db_version';
+    $installed_version = get_option($version_setting);
 
-$settings_table = $wpdb->prefix . "tennisbokning_settings";
+    if ($installed_version != $db_version) {
 
-$sql = "CREATE TABLE $settings_table (
-    name TINYTEXT NOT NULL,
-    from_time TIME NOT NULL,
-    to_time TIME NOT NULL,
-    max_bookings INT NOT NULL,
-    max_future_days INT NOT NULL
-) $charset_collate;";
+        global $wpdb;
 
-dbDelta($sql);
+        $charset_collate = $wpdb->get_charset_collate();
 
-$bookings_table = $wpdb->prefix . "tennisbokning_bookings";
+        $bookings_table = $wpdb->prefix . "tennisbokning_bookings";
 
-$sql = "CREATE TABLE $bookings_table (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    time DATETIME NOT NULL,
-    email TINYTEXT NOT NULL,
-    name TINYTEXT NOT NULL,
-    PRIMARY KEY  (id)
-  ) $charset_collate;";
+        $sql = "CREATE TABLE $bookings_table (
+        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+        time DATETIME NOT NULL,
+        email TINYTEXT NOT NULL,
+        name TINYTEXT NOT NULL,
+        PRIMARY KEY  (id)
+      ) $charset_collate;";
 
-dbDelta($sql);
+        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+        dbDelta($sql);
+
+        add_option(__NAMESPACE__ . 'db_version', $db_version);
+    }
+}
