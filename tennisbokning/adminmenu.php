@@ -2,6 +2,8 @@
 
 namespace cc\rylander\tennisbokning;
 
+add_action('admin_menu', __NAMESPACE__ . '\tennisbokning_menu');
+
 function tennisbokning_menu()
 {
     add_options_page(
@@ -22,5 +24,3 @@ function tennisbokning_options()
     echo '<p>Here is where the form would go if I actually had options.</p>';
     echo '</div>';
 }
-
-add_action('admin_menu', __NAMESPACE__ . '\tennisbokning_menu');
