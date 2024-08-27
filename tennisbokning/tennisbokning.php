@@ -9,3 +9,4 @@ namespace cc\rylander\tennisbokning;
 
 require_once dirname(__FILE__) . "/shortcodes.php";
 require_once dirname(__FILE__) . "/adminmenu.php";
+require_once dirname(__FILE__) . "/db_tables.php";
