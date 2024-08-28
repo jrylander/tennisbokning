@@ -25,6 +25,7 @@ function db_install()
         length_minutes TINYINT UNSIGNED NOT NULL,
         email TINYTEXT NOT NULL,
         name TINYTEXT NOT NULL,
+        hashed_password CHAR(32) NOT NULL,
         PRIMARY KEY  (id)
       ) $charset_collate;";
 
