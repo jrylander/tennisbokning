@@ -1,0 +1,78 @@
+# Copyright (C) 2024 
+# This file is distributed under the same license as the Simpel bokning plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Simpel bokning\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
+"POT-Creation-Date: 2024-08-28T15:01:24+00:00\n"
+"PO-Revision-Date: 2024-08-28 17:10+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Domain: simpelbokning\n"
+
+#. Plugin Name of the plugin
+#: simplebokning.php
+msgid "Simpel bokning"
+msgstr "Simpel bokning"
+
+#. Description of the plugin
+#: simplebokning.php
+msgid "Simplest possible booking system"
+msgstr "Enklast möjliga bokningssystem"
+
+#: options_menu.php:13
+msgid "Settings for Simple booking"
+msgstr "Inställningar for Simpel bokning"
+
+#: options_menu.php:14
+msgid "Simple booking"
+msgstr "Simpel bokning"
+
+#: options_menu.php:42
+msgid "Tennis court"
+msgstr "Tennisbana"
+
+#: options_menu.php:43
+msgid "Name of the resource of the booking system"
+msgstr "Namn på det som ska bokas"
+
+#: options_menu.php:46
+msgid "First timeslot"
+msgstr "Tidigast möjliga bokning"
+
+#: options_menu.php:49
+msgid "Last timeslot"
+msgstr "Senast möjliga bokning"
+
+#: options_menu.php:52
+msgid "Length of timeslots in minutes"
+msgstr "Längd på varje bokning"
+
+#: options_menu.php:55
+msgid "Max number of active bookings per user"
+msgstr "Max antal aktiva bokningar per användare"
+
+#: options_menu.php:58
+msgid "Max number of days in the future that can be booked"
+msgstr "Max antal dagar framåt som kan bokas"
+
+#: options_menu.php:66 options_menu.php:75
+msgid "Time must be in the format HH:MM"
+msgstr "Tiden måste vara på formatet TT:MM"
+
+#: options_menu.php:84
+msgid "Max number of active bookings per user must be greater than 1"
+msgstr "Max antal aktiva bokningar per användare måste vara större än 1"
+
+#: options_menu.php:93
+msgid "Max number of days in the future that can be booked must be greater than 1"
+msgstr "Max antal dagar framåt som kan bokas måste vara större än 1 måste vara större än 1"
+
+#: options_menu.php:102
+msgid "Length of timeslots in minutes must be between 1 and 24"
+msgstr "Längd på varje bokning måste vara mellan 1 och 24"
