@@ -27,7 +27,7 @@ function register_settings()
 function add_section() {
     add_settings_section(
         'simpelbokning_section',
-        'Simpelbokning',
+        'Simpel bokning',
         __NAMESPACE__ . '\render_section',
         'simpelbokning'
     );
@@ -35,7 +35,7 @@ function add_section() {
 
 function render_section()
 {
-    echo 'Inställningar för Simpelbokning';
+    echo 'Inställningar för Simpel bokning';
 }
 
 function add_settings() {

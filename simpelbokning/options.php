@@ -1,5 +1,5 @@
 <div class="wrap">
-<h1>Simpelbokning</h1>
+<h1>Simpel bokning</h1>
 
 <form method="post" action="options.php">
     <?php do_settings_sections('simpelbokning');?>
