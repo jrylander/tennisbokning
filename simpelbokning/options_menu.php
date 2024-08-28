@@ -10,8 +10,8 @@ if ( is_admin() ) {
 function add_menu()
 {
     add_options_page(
-        __('Simpelbokning-inställningar', 'simpelbokning'),
-        __('Simpelbokning', 'simpelbokning'),
+        __('Simpelbokning, inställningar', 'simpelbokning'),
+        __('Simpel bokning', 'simpelbokning'),
         'manage_options',
         'simpelbokning-options',
         __NAMESPACE__ . '\render_options_page'
