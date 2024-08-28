@@ -1,6 +1,6 @@
 <?php
 
-namespace cc\rylander\tennisbokning;
+namespace cc\rylander\simpelbokning;
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\db_install' );
 
@@ -17,7 +17,7 @@ function db_install()
 
         $charset_collate = $wpdb->get_charset_collate();
 
-        $bookings_table = $wpdb->prefix . "tennisbokning_bookings";
+        $bookings_table = $wpdb->prefix . "simpelbokning_bookings";
 
         $sql = "CREATE TABLE $bookings_table (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,

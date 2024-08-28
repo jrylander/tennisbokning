@@ -1,11 +1,11 @@
 <?php
 
 /*
-Plugin Name: Tennisbokning
-Description: Enklast möjliga bokningssystem för tennisbokning
+Plugin Name: Simpel bokning
+Description: Enklast möjliga bokningssystem
 */
 
-namespace cc\rylander\tennisbokning;
+namespace cc\rylander\simpelbokning;
 
 require_once dirname(__FILE__) . "/shortcodes.php";
 require_once dirname(__FILE__) . "/options_menu.php";
