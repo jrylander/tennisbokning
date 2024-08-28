@@ -6,7 +6,7 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\db_install' );
 
 function db_install()
 {
-    $db_version = '1.1';
+    $db_version = '1.2';
 
     $version_setting = __NAMESPACE__ . 'db_version';
     $installed_version = get_option($version_setting);
@@ -22,6 +22,7 @@ function db_install()
         $sql = "CREATE TABLE $bookings_table (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
         time DATETIME NOT NULL,
+        length_minutes TINYINT UNSIGNED NOT NULL,
         email TINYTEXT NOT NULL,
         name TINYTEXT NOT NULL,
         PRIMARY KEY  (id)
