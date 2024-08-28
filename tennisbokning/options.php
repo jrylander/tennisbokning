@@ -7,17 +7,17 @@
 
     <table class="form-table">
         <tr valign="top">
-            <th scope="row">Namn</th>
+            <th scope="row">Namn på det som bokas, t ex "Tennisbanan"</th>
             <td><input type="text" name="tennisbokning_name" value="<?php echo esc_attr(get_option('tennisbokning_name')); ?>" /></td>
         </tr>
 
         <tr valign="top">
-            <th scope="row">Första tid</th>
+            <th scope="row">Första tid som kan bokas</th>
             <td><input type="time" name="tennisbokning_first_slot_time" value="<?php echo esc_attr(get_option('tennisbokning_first_slot_time')); ?>" /></td>
         </tr>
 
         <tr valign="top">
-            <th scope="row">Sista tid</th>
+            <th scope="row">Sista tid som kan bokas</th>
             <td><input type="time" name="tennisbokning_last_slot_time" value="<?php echo esc_attr(get_option('tennisbokning_last_slot_time')); ?>" /></td>
         </tr>
 

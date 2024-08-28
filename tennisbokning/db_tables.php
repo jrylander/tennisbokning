@@ -6,7 +6,7 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\db_install' );
 
 function db_install()
 {
-    $db_version = '1.2';
+    $db_version = '0.9';
 
     $version_setting = __NAMESPACE__ . 'db_version';
     $installed_version = get_option($version_setting);
