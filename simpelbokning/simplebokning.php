@@ -1,9 +1,10 @@
 <?php
 
 /*
-Plugin Name: Simpel bokning
-Description: Enklast möjliga bokningssystem
-*/
+ * Plugin Name: Simpel bokning
+ * Description: Simplest possible booking system
+ * Domain Path: /languages
+ */
 
 namespace cc\rylander\simpelbokning;
 
