@@ -8,7 +8,7 @@ function db_install()
 {
     $db_version = '0.9';
 
-    $version_setting = __NAMESPACE__ . 'db_version';
+    $version_setting = __NAMESPACE__ . '\db_version';
     $installed_version = get_option($version_setting);
 
     if ($installed_version != $db_version) {
@@ -32,6 +32,6 @@ function db_install()
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
         dbDelta($sql);
 
-        add_option(__NAMESPACE__ . 'db_version', $db_version);
+        update_option(__NAMESPACE__ . '\db_version', $db_version);
     }
 }

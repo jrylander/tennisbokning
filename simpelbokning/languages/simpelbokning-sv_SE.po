@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simpel bokning\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-08-28T15:01:24+00:00\n"
-"PO-Revision-Date: 2024-08-28 17:10+0200\n"
+"POT-Creation-Date: 2024-08-30T20:25:24+00:00\n"
+"PO-Revision-Date: 2024-08-30 22:30+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.5\n"
 "X-Domain: simpelbokning\n"
 
 #. Plugin Name of the plugin
@@ -42,11 +42,11 @@ msgid "Name of the resource of the booking system"
 msgstr "Namn på det som ska bokas"
 
 #: options_menu.php:46
-msgid "First timeslot"
+msgid "First timeslot (hour)"
 msgstr "Tidigast möjliga bokning"
 
 #: options_menu.php:49
-msgid "Last timeslot"
+msgid "Last timeslot (hour)"
 msgstr "Senast möjliga bokning"
 
 #: options_menu.php:52
@@ -61,18 +61,50 @@ msgstr "Max antal aktiva bokningar per användare"
 msgid "Max number of days in the future that can be booked"
 msgstr "Max antal dagar framåt som kan bokas"
 
-#: options_menu.php:66 options_menu.php:75
-msgid "Time must be in the format HH:MM"
-msgstr "Tiden måste vara på formatet TT:MM"
+#: options_menu.php:67
+msgid "First slot hour must be between 0 and 23 and not greater than last slot time"
+msgstr "Första tiden måste vara mellan 0 och 23 och inte senare än sista tiden"
 
-#: options_menu.php:84
+#: options_menu.php:77
+msgid "Last slot hour must be between 0 and 23 and not less than first slot time"
+msgstr "Sista tiden måste vara mellan 0 och 23 och inte tidigare än första tiden"
+
+#: options_menu.php:86
 msgid "Max number of active bookings per user must be greater than 1"
 msgstr "Max antal aktiva bokningar per användare måste vara större än 1"
 
-#: options_menu.php:93
+#: options_menu.php:95
 msgid "Max number of days in the future that can be booked must be greater than 1"
 msgstr "Max antal dagar framåt som kan bokas måste vara större än 1 måste vara större än 1"
 
-#: options_menu.php:102
+#: options_menu.php:104
 msgid "Length of timeslots in minutes must be between 1 and 24"
 msgstr "Längd på varje bokning måste vara mellan 1 och 24"
+
+#: views/current_bookings.php:22
+msgid "Monday"
+msgstr "Måndag"
+
+#: views/current_bookings.php:23
+msgid "Tuesday"
+msgstr "Tisdag"
+
+#: views/current_bookings.php:24
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: views/current_bookings.php:25
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: views/current_bookings.php:26
+msgid "Friday"
+msgstr "Fredag"
+
+#: views/current_bookings.php:27
+msgid "Saturday"
+msgstr "Lördag"
+
+#: views/current_bookings.php:28
+msgid "Sunday"
+msgstr "Söndag"

@@ -42,13 +42,13 @@ function add_settings() {
     register_setting('simpelbokning', 'simpelbokning_name', array('default' => __('Tennis court', 'simpelbokning'), 'sanitize_callback' => 'sanitize_text_field'));
     add_settings_field('simpelbokning_name', __('Name of the resource of the booking system', 'simpelbokning'), __NAMESPACE__ . '\render_name', 'simpelbokning', 'simpelbokning_section');
 
-    register_setting('simpelbokning', 'simpelbokning_first_slot_time', array('default' => '08:00', 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_first_slot_time'));
-    add_settings_field('simpelbokning_first_slot_time', __('First timeslot', 'simpelbokning'), __NAMESPACE__ . '\render_first_slot_time', 'simpelbokning', 'simpelbokning_section');
+    register_setting('simpelbokning', 'simpelbokning_first_slot_hour', array('default' => 8, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_first_slot_hour'));
+    add_settings_field('simpelbokning_first_slot_hour', __('First timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_first_slot_hour', 'simpelbokning', 'simpelbokning_section');
 
-    register_setting('simpelbokning', 'simpelbokning_last_slot_time', array('default' => '17:00', 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_last_slot_time'));
-    add_settings_field('simpelbokning_last_slot_time', __('Last timeslot', 'simpelbokning'), __NAMESPACE__ . '\render_last_slot_time', 'simpelbokning', 'simpelbokning_section');
+    register_setting('simpelbokning', 'simpelbokning_last_slot_hour', array('default' => 17, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_last_slot_hour'));
+    add_settings_field('simpelbokning_last_slot_hour', __('Last timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_last_slot_hour', 'simpelbokning', 'simpelbokning_section');
 
-    register_setting('simpelbokning', 'simpelbokning_slot_length_minutes', array('default' => 1, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_slot_length_minutes'));
+    register_setting('simpelbokning', 'simpelbokning_slot_length_minutes', array('default' => 60, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_slot_length_minutes'));
     add_settings_field('simpelbokning_slot_length_minutes', __('Length of timeslots in minutes', 'simpelbokning'), __NAMESPACE__ . '\render_slot_length_minutes', 'simpelbokning', 'simpelbokning_section');
 
     register_setting('simpelbokning', 'simpelbokning_max_outstanding_bookings', array('default' => 2, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_max_outstanding_bookings'));
@@ -58,21 +58,23 @@ function add_settings() {
     add_settings_field('simpelbokning_max_days_bookable', __('Max number of days in the future that can be booked', 'simpelbokning'), __NAMESPACE__ . '\render_max_days_bookable', 'simpelbokning', 'simpelbokning_section');
 }
 
-function sanitize_first_slot_time($input) {
-    $old_value = get_option('simpelbokning_first_slot_time');
-    if (time_is_valid($input)) {
+function sanitize_first_slot_hour($input) {
+    $old_value = get_option('simpelbokning_first_slot_hour');
+    $last_slot_hour = get_option('simpelbokning_last_slot_hour');
+    if ($input > 0 && $input <= 23 && $input <= $last_slot_hour && $last_slot_hour >= 0) {
         return $input;
     }
-    add_settings_error('simpelbokning_first_slot_time', 'invalid-time', __('Time must be in the format HH:MM', 'simpelbokning'));
+    add_settings_error('simpelbokning_first_slot_hour', 'invalid-number', __('First slot hour must be between 0 and 23 and not greater than last slot time', 'simpelbokning'));
     return $old_value;
 }
 
-function sanitize_last_slot_time($input) {
-    $old_value = get_option('simpelbokning_last_slot_time');
-    if (time_is_valid($input)) {
+function sanitize_last_slot_hour($input) {
+    $old_value = get_option('simpelbokning_last_slot_hour');
+    $first_slot_hour = get_option('simpelbokning_first_slot_hour');
+    if ($input > 0 && $input <= 23 && $input >= $first_slot_hour && $first_slot_hour >= 0) {
         return $input;
     }
-    add_settings_error('simpelbokning_last_slot_time', 'invalid-time', __('Time must be in the format HH:MM', 'simpelbokning'));
+    add_settings_error('simpelbokning_last_slot_hour', 'invalid-number', __('Last slot hour must be between 0 and 23 and not less than first slot time', 'simpelbokning'));
     return $old_value;
 }
 
@@ -103,26 +105,22 @@ function sanitize_slot_length_minutes($input) {
     return $old_value;
 }
 
-function time_is_valid($input) {
-    return preg_match('/^([01][0-9]|2[0-3]):[0-5][0-9]$/', $input);
-}
-
 function render_name()
 {
     $name = get_option('simpelbokning_name');
     echo "<input type='text' name='simpelbokning_name' value='$name' />";
 }
 
-function render_first_slot_time()
+function render_first_slot_hour()
 {
-    $first_slot_time = get_option('simpelbokning_first_slot_time');
-    echo "<input type='time' name='simpelbokning_first_slot_time' value='$first_slot_time' />";
+    $first_slot_hour = get_option('simpelbokning_first_slot_hour');
+    echo "<input type='number' name='simpelbokning_first_slot_hour' value='$first_slot_hour' />";
 }
 
-function render_last_slot_time()
+function render_last_slot_hour()
 {
-    $last_slot_time = get_option('simpelbokning_last_slot_time');
-    echo "<input type='time' name='simpelbokning_last_slot_time' value='$last_slot_time' />";
+    $last_slot_hour = get_option('simpelbokning_last_slot_hour');
+    echo "<input type='number' name='simpelbokning_last_slot_hour' value='$last_slot_hour' />";
 }
 
 function render_slot_length_minutes()
@@ -148,5 +146,5 @@ function render_options_page()
     if (!current_user_can('manage_options')) {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }
-    require_once dirname(__FILE__) . '/options.php';
+    require_once dirname(__FILE__) . '/views/options.php';
 }

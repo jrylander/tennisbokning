@@ -2,13 +2,14 @@
 
 namespace cc\rylander\simpelbokning;
 
-add_action('init', __NAMESPACE__ . '\register_simpelbokning_shortcode');
+add_action('init', __NAMESPACE__ . '\register_shortcodes');
 
-function register_simpelbokning_shortcode()
+function register_shortcodes()
 {
-    add_shortcode('simpelbokning', __NAMESPACE__ . '\simpelbokning_shortcode');
+    add_shortcode('simpelbokning_current_bookings', __NAMESPACE__ . '\current_bookings');
 }
-function simpelbokning_shortcode()
+
+function current_bookings()
 {
-    return '<div id="simpelbokning">Simpelbokning visas här</div>';
+    require_once dirname(__FILE__) . '/views/current_bookings.php';
 }
