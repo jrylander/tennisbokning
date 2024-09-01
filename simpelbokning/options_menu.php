@@ -56,6 +56,9 @@ function add_settings() {
 
     register_setting('simpelbokning', 'simpelbokning_max_days_bookable', array('default' => 14, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_max_days_bookable'));
     add_settings_field('simpelbokning_max_days_bookable', __('Max number of days in the future that can be booked', 'simpelbokning'), __NAMESPACE__ . '\render_max_days_bookable', 'simpelbokning', 'simpelbokning_section');
+
+    register_setting('simpelbokning', 'simpelbokning_weeks_to_show', array('default' => 2, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_weeks_to_show'));
+    add_settings_field('simpelbokning_weeks_to_show', __('Number of weeks in the future to show for visitors', 'simpelbokning'), __NAMESPACE__ . '\render_weeks_to_show', 'simpelbokning', 'simpelbokning_section');
 }
 
 function sanitize_first_slot_hour($input) {
@@ -105,6 +108,15 @@ function sanitize_slot_length_minutes($input) {
     return $old_value;
 }
 
+function sanitize_weeks_to_show($input) {
+    $old_value = get_option('simpelbokning_weeks_to_show');
+    if ($input > 0) {
+        return $input;
+    }
+    add_settings_error('simpelbokning_weeks_to_show', 'invalid-number', __('Number of weeks to show must be at least 1', 'simpelbokning'));
+    return $old_value;
+}
+
 function render_name()
 {
     $name = get_option('simpelbokning_name');
@@ -139,6 +151,12 @@ function render_max_days_bookable()
 {
     $max_days_bookable = get_option('simpelbokning_max_days_bookable');
     echo "<input type='number' name='simpelbokning_max_days_bookable' value='$max_days_bookable' />";
+}
+
+function render_weeks_to_show()
+{
+    $weeks_to_show = get_option('simpelbokning_weeks_to_show');
+    echo "<input type='number' name='simpelbokning_weeks_to_show' value='$weeks_to_show' />";
 }
 
 function render_options_page()

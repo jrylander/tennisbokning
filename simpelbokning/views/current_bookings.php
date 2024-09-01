@@ -16,7 +16,7 @@ $year = $now->format('Y');
 // echo $week_start->format('Y-m-d H:i:s');
 ?>
 <div id="simpelbokning">Aktiva bokningar:
-<?php for ($week = 0; $week <= 2; $week++) {?>
+<?php for ($week = 0; $week <= \get_option('simpelbokning_weeks_to_show'); $week++) {?>
     <table>
         <tr>
             <th><?=__('w', 'simpelbokning')?><?= $this_week + $week ?></th>
