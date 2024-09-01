@@ -101,10 +101,10 @@ function sanitize_max_days_bookable($input) {
 
 function sanitize_slot_length_minutes($input) {
     $old_value = get_option('simpelbokning_slot_length_minutes');
-    if ($input > 0 && $input <= 24) {
+    if ($input > 0 && $input <= 1440) {
         return $input;
     }
-    add_settings_error('simpelbokning_slot_length_minutes', 'invalid-number', __('Length of timeslots in minutes must be between 1 and 24', 'simpelbokning'));
+    add_settings_error('simpelbokning_slot_length_minutes', 'invalid-number', __('Length of timeslots in minutes must be between 1 and 1440', 'simpelbokning'));
     return $old_value;
 }
 
