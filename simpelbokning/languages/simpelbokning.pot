@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-30T20:25:24+00:00\n"
+"POT-Creation-Date: 2024-09-01T18:08:50+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: simpelbokning\n"
@@ -81,29 +81,33 @@ msgid "Length of timeslots in minutes must be between 1 and 24"
 msgstr ""
 
 #: views/current_bookings.php:22
-msgid "Monday"
+msgid "w"
 msgstr ""
 
 #: views/current_bookings.php:23
-msgid "Tuesday"
+msgid "Monday"
 msgstr ""
 
 #: views/current_bookings.php:24
-msgid "Wednesday"
+msgid "Tuesday"
 msgstr ""
 
 #: views/current_bookings.php:25
-msgid "Thursday"
+msgid "Wednesday"
 msgstr ""
 
 #: views/current_bookings.php:26
-msgid "Friday"
+msgid "Thursday"
 msgstr ""
 
 #: views/current_bookings.php:27
-msgid "Saturday"
+msgid "Friday"
 msgstr ""
 
 #: views/current_bookings.php:28
+msgid "Saturday"
+msgstr ""
+
+#: views/current_bookings.php:29
 msgid "Sunday"
 msgstr ""

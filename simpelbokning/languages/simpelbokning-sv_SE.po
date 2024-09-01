@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simpel bokning\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-08-30T20:25:24+00:00\n"
-"PO-Revision-Date: 2024-08-30 22:30+0200\n"
+"POT-Creation-Date: 2024-09-01T18:08:50+00:00\n"
+"PO-Revision-Date: 2024-09-01 20:10+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -82,29 +82,37 @@ msgid "Length of timeslots in minutes must be between 1 and 24"
 msgstr "Längd på varje bokning måste vara mellan 1 och 24"
 
 #: views/current_bookings.php:22
+msgid "w"
+msgstr "v"
+
+#: views/current_bookings.php:23
+msgid "Hour"
+msgstr "Timme"
+
+#: views/current_bookings.php:24
 msgid "Monday"
 msgstr "Måndag"
 
-#: views/current_bookings.php:23
+#: views/current_bookings.php:25
 msgid "Tuesday"
 msgstr "Tisdag"
 
-#: views/current_bookings.php:24
+#: views/current_bookings.php:26
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: views/current_bookings.php:25
+#: views/current_bookings.php:27
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: views/current_bookings.php:26
+#: views/current_bookings.php:28
 msgid "Friday"
 msgstr "Fredag"
 
-#: views/current_bookings.php:27
+#: views/current_bookings.php:29
 msgid "Saturday"
 msgstr "Lördag"
 
-#: views/current_bookings.php:28
+#: views/current_bookings.php:30
 msgid "Sunday"
 msgstr "Söndag"
