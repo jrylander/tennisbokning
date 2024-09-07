@@ -2,20 +2,22 @@
 
 namespace cc\rylander\simpelbokning;
 
+require_once dirname(__FILE__) . '/../utils.php';
+
 global $wpdb;
 
 $table_name = $wpdb->prefix . 'simpelbokning_bookings';
 $query = "SELECT time, length_minutes, name FROM $table_name WHERE time BETWEEN NOW() AND NOW() + INTERVAL " . \get_option('simpelbokning_weeks_to_show') . " WEEK;";
 $current_bookings = $wpdb->get_results($query);
-?>
-<?php
+
 $first_slot_hour = \get_option('simpelbokning_first_slot_hour');
 $last_slot_hour = \get_option('simpelbokning_last_slot_hour');
 $now = new \DateTimeImmutable();
 $this_week = $now->format('W');
 $year = $now->format('Y');
-// echo $week_start->format('Y-m-d H:i:s');
+
 ?>
+
 <div id="simpelbokning">
 <?php for ($week = 0; $week <= \get_option('simpelbokning_weeks_to_show'); $week++) {?>
     <table>
@@ -40,8 +42,8 @@ $year = $now->format('Y');
                 ?>
                 <td style="border: 1px solid black;">
                     <?php
-                    if ($this_hour->getTimestamp() < $now->getTimestamp()) {
-                            echo '-';
+                    if (!is_bookable($this_hour->getTimestamp())) {
+                        echo '-';
                     } else {
                         $bookings = array_filter($current_bookings, function ($booking) use ($this_hour, $slot_start, $slot_end) {
                             $booking_start = strtotime($booking->time);
@@ -54,7 +56,7 @@ $year = $now->format('Y');
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '';
+                            echo '<a href="' . admin_url( 'admin-post.php' ) . '">' . __('book this', 'simpelbokning') . '</a>';
                         }
                     }
                     ?>
