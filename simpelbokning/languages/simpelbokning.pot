@@ -9,19 +9,67 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-01T18:31:46+00:00\n"
+"POT-Creation-Date: 2024-09-07T18:18:53+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: simpelbokning\n"
 
 #. Plugin Name of the plugin
-#: simplebokning.php
+#: simpelbokning.php
 msgid "Simpel bokning"
 msgstr ""
 
 #. Description of the plugin
-#: simplebokning.php
+#: simpelbokning.php
 msgid "Simplest possible booking system"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:15
+msgid "w"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:16
+msgid "Monday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:17
+msgid "Tuesday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:18
+msgid "Wednesday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:19
+msgid "Thursday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:20
+msgid "Friday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:21
+msgid "Saturday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:22
+msgid "Sunday"
+msgstr ""
+
+#: current_bookings/current_bookings_view.php:49
+msgid "book this"
+msgstr ""
+
+#: new_booking/new_booking_view.php:5
+msgid "Name"
+msgstr ""
+
+#: new_booking/new_booking_view.php:6
+msgid "Email"
+msgstr ""
+
+#: new_booking/new_booking_view.php:7
+msgid "Submit\""
 msgstr ""
 
 #: options_menu.php:13
@@ -81,41 +129,9 @@ msgid "Max number of days in the future that can be booked must be greater than 
 msgstr ""
 
 #: options_menu.php:107
-msgid "Length of timeslots in minutes must be between 1 and 24"
+msgid "Length of timeslots in minutes must be between 1 and 1440"
 msgstr ""
 
 #: options_menu.php:116
 msgid "Number of weeks to show must be at least 1"
-msgstr ""
-
-#: views/current_bookings.php:22
-msgid "w"
-msgstr ""
-
-#: views/current_bookings.php:23
-msgid "Monday"
-msgstr ""
-
-#: views/current_bookings.php:24
-msgid "Tuesday"
-msgstr ""
-
-#: views/current_bookings.php:25
-msgid "Wednesday"
-msgstr ""
-
-#: views/current_bookings.php:26
-msgid "Thursday"
-msgstr ""
-
-#: views/current_bookings.php:27
-msgid "Friday"
-msgstr ""
-
-#: views/current_bookings.php:28
-msgid "Saturday"
-msgstr ""
-
-#: views/current_bookings.php:29
-msgid "Sunday"
 msgstr ""

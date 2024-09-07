@@ -4,5 +4,5 @@
   <p>
   <label for="name"><?=__('Name', 'simpelbokning')?>:</label> <input type="text" name="name" id="name" />
   <label for="email"><?=__('Email', 'simpelbokning')?>:</label><input type="text" name="email" id="email" />
-  <input type="submit" name="submit" value="<?=__('Submit"', 'simpelbokning')?> />
+  <input type="submit" name="submit" value="<?=__('Submit', 'simpelbokning')?> />
 </form>

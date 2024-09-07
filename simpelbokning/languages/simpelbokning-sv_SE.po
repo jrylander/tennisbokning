@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simpel bokning\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-09-01T18:08:50+00:00\n"
-"PO-Revision-Date: 2024-09-01 22:15+0200\n"
+"POT-Creation-Date: 2024-09-07T18:18:53+00:00\n"
+"PO-Revision-Date: 2024-09-07 20:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -16,14 +16,62 @@ msgstr ""
 "X-Domain: simpelbokning\n"
 
 #. Plugin Name of the plugin
-#: simplebokning.php
+#: simpelbokning.php
 msgid "Simpel bokning"
 msgstr "Simpel bokning"
 
 #. Description of the plugin
-#: simplebokning.php
+#: simpelbokning.php
 msgid "Simplest possible booking system"
 msgstr "Enklast möjliga bokningssystem"
+
+#: current_bookings/current_bookings_view.php:15
+msgid "w"
+msgstr "v"
+
+#: current_bookings/current_bookings_view.php:16
+msgid "Monday"
+msgstr "Måndag"
+
+#: current_bookings/current_bookings_view.php:17
+msgid "Tuesday"
+msgstr "Tisdag"
+
+#: current_bookings/current_bookings_view.php:18
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: current_bookings/current_bookings_view.php:19
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: current_bookings/current_bookings_view.php:20
+msgid "Friday"
+msgstr "Fredag"
+
+#: current_bookings/current_bookings_view.php:21
+msgid "Saturday"
+msgstr "Lördag"
+
+#: current_bookings/current_bookings_view.php:22
+msgid "Sunday"
+msgstr "Söndag"
+
+#: current_bookings/current_bookings_view.php:49
+msgid "book this"
+msgstr "boka denna"
+
+#: new_booking/new_booking_view.php:5
+msgid "Name"
+msgstr "Namn"
+
+#: new_booking/new_booking_view.php:6
+msgid "Email"
+msgstr "E-post"
+
+#: new_booking/new_booking_view.php:7
+msgid "Submit"
+msgstr "Boka"
 
 #: options_menu.php:13
 msgid "Settings for Simple booking"
@@ -88,35 +136,3 @@ msgstr "Längd på varje bokning måste vara mellan 1 och 24"
 #: options_menu.php:116
 msgid "Number of weeks to show must be at least 1"
 msgstr "Antal veckor att visa måste vara minst 1"
-
-#: views/current_bookings.php:22
-msgid "w"
-msgstr "v"
-
-#: views/current_bookings.php:23
-msgid "Monday"
-msgstr "Måndag"
-
-#: views/current_bookings.php:24
-msgid "Tuesday"
-msgstr "Tisdag"
-
-#: views/current_bookings.php:25
-msgid "Wednesday"
-msgstr "Onsdag"
-
-#: views/current_bookings.php:26
-msgid "Thursday"
-msgstr "Torsdag"
-
-#: views/current_bookings.php:27
-msgid "Friday"
-msgstr "Fredag"
-
-#: views/current_bookings.php:28
-msgid "Saturday"
-msgstr "Lördag"
-
-#: views/current_bookings.php:29
-msgid "Sunday"
-msgstr "Söndag"
