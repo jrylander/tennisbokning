@@ -26,7 +26,7 @@ function db_install()
         email TINYTEXT NOT NULL,
         name TINYTEXT NOT NULL,
         hashed_password CHAR(32) NOT NULL,
-        PRIMARY KEY  (id)
+        PRIMARY KEY (id)
       ) $charset_collate;";
 
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';
