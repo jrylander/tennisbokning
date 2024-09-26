@@ -47,7 +47,7 @@ global $wpdb;
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '<a href="' . \get_option('simpelbokning_path_for_new_booking') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
+                            echo '<form action="' . \get_option('simpelbokning_path_for_new_booking') . '" method="post"><input type="hidden" name="slot_start" value="' . $slot_start . '"><button type="submit">' . __('book this', 'simpelbokning') . '</button></form>';
                         }
                     }
                     ?>
