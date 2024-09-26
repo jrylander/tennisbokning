@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simpel bokning\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-09-09T18:26:48+00:00\n"
-"PO-Revision-Date: 2024-09-09 21:25+0200\n"
+"POT-Creation-Date: 2024-09-26T12:53:41+00:00\n"
+"PO-Revision-Date: 2024-09-26 14:54+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -57,7 +57,7 @@ msgstr "Lördag"
 msgid "Sunday"
 msgstr "Söndag"
 
-#: current_bookings/current_bookings_view.php:49
+#: current_bookings/current_bookings_view.php:50
 msgid "book this"
 msgstr "boka tiden"
 
@@ -66,10 +66,14 @@ msgid "Name"
 msgstr "Namn"
 
 #: new_booking/new_booking_view.php:6
+msgid "Name"
+msgstr "Namn"
+
+#: new_booking/new_booking_view.php:7
 msgid "Email"
 msgstr "E-post"
 
-#: new_booking/new_booking_view.php:7
+#: new_booking/new_booking_view.php:8
 msgid "Submit"
 msgstr "Boka"
 
@@ -117,26 +121,34 @@ msgstr "Antal veckor framåt som ska visas för besökare"
 msgid "Path or URL to page for new booking"
 msgstr "Sökväg eller URL till sidan för att göra en bokning"
 
-#: options_menu.php:73
+#: options_menu.php:66
+msgid "This timeslot is not bookable"
+msgstr "Den här tiden går inte att boka"
+
+#: options_menu.php:67
+msgid "Message to show for trying to book a non bookable timeslot"
+msgstr "Meddelande som ska visas när en bokningstid inte är möjlig att boka"
+
+#: options_menu.php:76
 msgid "First slot hour must be between 0 and 23 and not greater than last slot time"
 msgstr "Första tiden måste vara mellan 0 och 23 och inte senare än sista tiden"
 
-#: options_menu.php:83
+#: options_menu.php:86
 msgid "Last slot hour must be between 0 and 23 and not less than first slot time"
 msgstr "Sista tiden måste vara mellan 0 och 23 och inte tidigare än första tiden"
 
-#: options_menu.php:92
+#: options_menu.php:95
 msgid "Max number of active bookings per user must be greater than 1"
 msgstr "Max antal aktiva bokningar per användare måste vara större än 1"
 
-#: options_menu.php:101
+#: options_menu.php:104
 msgid "Max number of days in the future that can be booked must be greater than 1"
 msgstr "Max antal dagar framåt som kan bokas måste vara större än 1 måste vara större än 1"
 
-#: options_menu.php:110
+#: options_menu.php:113
 msgid "Length of timeslots in minutes must be between 1 and 1440"
 msgstr "Längd på varje bokning måste vara mellan 1 och 24"
 
-#: options_menu.php:119
+#: options_menu.php:122
 msgid "Number of weeks to show must be at least 1"
 msgstr "Antal veckor att visa måste vara minst 1"

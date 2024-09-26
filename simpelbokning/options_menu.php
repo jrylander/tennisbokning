@@ -62,6 +62,9 @@ function add_settings() {
 
     register_setting('simpelbokning', 'simpelbokning_path_for_new_booking', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
     add_settings_field('simpelbokning_path_for_new_booking', __('Path or URL to page for new booking', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_new_booking', 'simpelbokning', 'simpelbokning_section');
+
+    register_setting('simpelbokning', 'simpelbokning_message_for_non_bookable', array('default' => __('This timeslot is not bookable', 'simpelbokning'), 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_message_for_non_bookable', __('Message to show for trying to book a non bookable timeslot', 'simpelbokning'), __NAMESPACE__ . '\render_message_for_non_bookable', 'simpelbokning', 'simpelbokning_section');
 }
 
 function sanitize_first_slot_hour($input) {
@@ -166,6 +169,12 @@ function render_path_for_new_booking()
 {
     $path_for_new_booking = get_option('simpelbokning_path_for_new_booking');
     echo "<input type='text' name='simpelbokning_path_for_new_booking' value='$path_for_new_booking' />";
+}
+
+function render_message_for_non_bookable()
+{
+    $message_for_non_bookable = get_option('simpelbokning_message_for_non_bookable');
+    echo "<input type='text' name='simpelbokning_message_for_non_bookable' value='$message_for_non_bookable' />";
 }
 
 function render_options_page()

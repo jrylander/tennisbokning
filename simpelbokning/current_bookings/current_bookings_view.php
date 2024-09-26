@@ -35,7 +35,8 @@ global $wpdb;
                     if (!is_bookable($this_hour->getTimestamp())) {
                         echo '-';
                     } else {
-                        $bookings = array_filter($current_bookings, function ($booking) use ($this_hour, $slot_start, $slot_end) {
+                        // Get bookings for this slot
+                        $bookings = array_filter($current_bookings, function ($booking) use ($slot_start, $slot_end) {
                             $booking_start = strtotime($booking->time);
                             $booking_end = strtotime($booking->time) + $booking->length_minutes * 60;
                             return ($booking_start >= $slot_start && $booking_start < $slot_end) ||
@@ -46,7 +47,7 @@ global $wpdb;
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '<a href="' . admin_url( 'admin-post.php' ) . '">' . __('book this', 'simpelbokning') . '</a>';
+                            echo '<a href="' . \get_option('simpelbokning_path_for_new_booking') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
                         }
                     }
                     ?>

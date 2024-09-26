@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-09T18:26:48+00:00\n"
+"POT-Creation-Date: 2024-09-26T12:53:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: simpelbokning\n"
@@ -56,19 +56,19 @@ msgstr ""
 msgid "Sunday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:49
+#: current_bookings/current_bookings_view.php:50
 msgid "book this"
 msgstr ""
 
-#: new_booking/new_booking_view.php:5
+#: new_booking/new_booking_view.php:6
 msgid "Name"
 msgstr ""
 
-#: new_booking/new_booking_view.php:6
+#: new_booking/new_booking_view.php:7
 msgid "Email"
 msgstr ""
 
-#: new_booking/new_booking_view.php:7
+#: new_booking/new_booking_view.php:8
 msgid "Submit"
 msgstr ""
 
@@ -116,26 +116,34 @@ msgstr ""
 msgid "Path or URL to page for new booking"
 msgstr ""
 
-#: options_menu.php:73
+#: options_menu.php:66
+msgid "This timeslot is not bookable"
+msgstr ""
+
+#: options_menu.php:67
+msgid "Message to show for trying to book a non bookable timeslot"
+msgstr ""
+
+#: options_menu.php:76
 msgid "First slot hour must be between 0 and 23 and not greater than last slot time"
 msgstr ""
 
-#: options_menu.php:83
+#: options_menu.php:86
 msgid "Last slot hour must be between 0 and 23 and not less than first slot time"
 msgstr ""
 
-#: options_menu.php:92
+#: options_menu.php:95
 msgid "Max number of active bookings per user must be greater than 1"
 msgstr ""
 
-#: options_menu.php:101
+#: options_menu.php:104
 msgid "Max number of days in the future that can be booked must be greater than 1"
 msgstr ""
 
-#: options_menu.php:110
+#: options_menu.php:113
 msgid "Length of timeslots in minutes must be between 1 and 1440"
 msgstr ""
 
-#: options_menu.php:119
+#: options_menu.php:122
 msgid "Number of weeks to show must be at least 1"
 msgstr ""
