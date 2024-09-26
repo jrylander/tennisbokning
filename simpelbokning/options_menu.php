@@ -59,6 +59,9 @@ function add_settings() {
 
     register_setting('simpelbokning', 'simpelbokning_weeks_to_show', array('default' => 2, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_weeks_to_show'));
     add_settings_field('simpelbokning_weeks_to_show', __('Number of weeks in the future to show for visitors', 'simpelbokning'), __NAMESPACE__ . '\render_weeks_to_show', 'simpelbokning', 'simpelbokning_section');
+
+    register_setting('simpelbokning', 'simpelbokning_path_for_new_booking', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_new_booking', __('Path or URL to page for new booking', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_new_booking', 'simpelbokning', 'simpelbokning_section');
 }
 
 function sanitize_first_slot_hour($input) {
@@ -135,10 +138,10 @@ function render_last_slot_hour()
     echo "<input type='number' name='simpelbokning_last_slot_hour' value='$last_slot_hour' />";
 }
 
-function render_slot_length_minutes()
+function render_slot_length_hours()
 {
-    $slot_length_minutes = get_option('simpelbokning_slot_length_minutes');
-    echo "<input type='number' name='simpelbokning_slot_length_minutes' value='$slot_length_minutes' />";
+    $slot_length_hours = get_option('simpelbokning_slot_length_hours');
+    echo "<input type='number' name='simpelbokning_slot_length_hours' value='$slot_length_hours' />";
 }
 
 function render_max_outstanding_bookings()
@@ -157,6 +160,12 @@ function render_weeks_to_show()
 {
     $weeks_to_show = get_option('simpelbokning_weeks_to_show');
     echo "<input type='number' name='simpelbokning_weeks_to_show' value='$weeks_to_show' />";
+}
+
+function render_path_for_new_booking()
+{
+    $path_for_new_booking = get_option('simpelbokning_path_for_new_booking');
+    echo "<input type='text' name='simpelbokning_path_for_new_booking' value='$path_for_new_booking' />";
 }
 
 function render_options_page()

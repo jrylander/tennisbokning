@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-07T18:18:53+00:00\n"
+"POT-Creation-Date: 2024-09-09T18:26:48+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: simpelbokning\n"
@@ -69,7 +69,7 @@ msgid "Email"
 msgstr ""
 
 #: new_booking/new_booking_view.php:7
-msgid "Submit\""
+msgid "Submit"
 msgstr ""
 
 #: options_menu.php:13
@@ -112,26 +112,30 @@ msgstr ""
 msgid "Number of weeks in the future to show for visitors"
 msgstr ""
 
-#: options_menu.php:70
+#: options_menu.php:64
+msgid "Path or URL to page for new booking"
+msgstr ""
+
+#: options_menu.php:73
 msgid "First slot hour must be between 0 and 23 and not greater than last slot time"
 msgstr ""
 
-#: options_menu.php:80
+#: options_menu.php:83
 msgid "Last slot hour must be between 0 and 23 and not less than first slot time"
 msgstr ""
 
-#: options_menu.php:89
+#: options_menu.php:92
 msgid "Max number of active bookings per user must be greater than 1"
 msgstr ""
 
-#: options_menu.php:98
+#: options_menu.php:101
 msgid "Max number of days in the future that can be booked must be greater than 1"
 msgstr ""
 
-#: options_menu.php:107
+#: options_menu.php:110
 msgid "Length of timeslots in minutes must be between 1 and 1440"
 msgstr ""
 
-#: options_menu.php:116
+#: options_menu.php:119
 msgid "Number of weeks to show must be at least 1"
 msgstr ""

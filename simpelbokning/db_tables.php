@@ -2,16 +2,20 @@
 
 namespace cc\rylander\simpelbokning;
 
-add_action( 'plugins_loaded', __NAMESPACE__ . '\db_install' );
+add_action( 'admin_init', __NAMESPACE__ . '\db_install' );
 
 function db_install()
 {
-    $db_version = '0.9';
+    $db_version = '0.13';
 
     $version_setting = __NAMESPACE__ . '\db_version';
     $installed_version = get_option($version_setting);
 
+    error_log('Database version: ' . $installed_version . ' vs ' . $db_version);
+
     if ($installed_version != $db_version) {
+
+        error_log('Uppgrading database');
 
         global $wpdb;
 
@@ -19,14 +23,14 @@ function db_install()
 
         $bookings_table = $wpdb->prefix . "simpelbokning_bookings";
 
-        $sql = "CREATE TABLE $bookings_table (
-        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-        time DATETIME NOT NULL,
-        length_minutes TINYINT UNSIGNED NOT NULL,
-        email TINYTEXT NOT NULL,
-        name TINYTEXT NOT NULL,
-        hashed_password CHAR(32) NOT NULL,
-        PRIMARY KEY (id)
+        $sql = "CREATE TABLE $bookings_table (\n
+        id INT UNSIGNED NOT NULL AUTO_INCREMENT,\n
+        time DATETIME NOT NULL,\n
+        length_hours TINYINT UNSIGNED NOT NULL,\n
+        email TINYTEXT NOT NULL,\n
+        name TINYTEXT NOT NULL,\n
+        hashed_password CHAR(32) NOT NULL,\n
+        PRIMARY KEY (id)\n
       ) $charset_collate;";
 
         require_once ABSPATH . 'wp-admin/includes/upgrade.php';

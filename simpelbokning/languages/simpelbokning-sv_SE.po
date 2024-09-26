@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simpel bokning\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-09-07T18:18:53+00:00\n"
-"PO-Revision-Date: 2024-09-07 20:23+0200\n"
+"POT-Creation-Date: 2024-09-09T18:26:48+00:00\n"
+"PO-Revision-Date: 2024-09-09 21:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -113,26 +113,30 @@ msgstr "Max antal dagar framåt som kan bokas"
 msgid "Number of weeks in the future to show for visitors"
 msgstr "Antal veckor framåt som ska visas för besökare"
 
-#: options_menu.php:70
+#: options_menu.php:64
+msgid "Path or URL to page for new booking"
+msgstr "Sökväg eller URL till sidan för att göra en bokning"
+
+#: options_menu.php:73
 msgid "First slot hour must be between 0 and 23 and not greater than last slot time"
 msgstr "Första tiden måste vara mellan 0 och 23 och inte senare än sista tiden"
 
-#: options_menu.php:80
+#: options_menu.php:83
 msgid "Last slot hour must be between 0 and 23 and not less than first slot time"
 msgstr "Sista tiden måste vara mellan 0 och 23 och inte tidigare än första tiden"
 
-#: options_menu.php:89
+#: options_menu.php:92
 msgid "Max number of active bookings per user must be greater than 1"
 msgstr "Max antal aktiva bokningar per användare måste vara större än 1"
 
-#: options_menu.php:98
+#: options_menu.php:101
 msgid "Max number of days in the future that can be booked must be greater than 1"
 msgstr "Max antal dagar framåt som kan bokas måste vara större än 1 måste vara större än 1"
 
-#: options_menu.php:107
-msgid "Length of timeslots in minutes must be between 1 and 24"
+#: options_menu.php:110
+msgid "Length of timeslots in minutes must be between 1 and 1440"
 msgstr "Längd på varje bokning måste vara mellan 1 och 24"
 
-#: options_menu.php:116
+#: options_menu.php:119
 msgid "Number of weeks to show must be at least 1"
 msgstr "Antal veckor att visa måste vara minst 1"
