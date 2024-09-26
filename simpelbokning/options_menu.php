@@ -138,10 +138,10 @@ function render_last_slot_hour()
     echo "<input type='number' name='simpelbokning_last_slot_hour' value='$last_slot_hour' />";
 }
 
-function render_slot_length_hours()
+function render_slot_length_minutes()
 {
-    $slot_length_hours = get_option('simpelbokning_slot_length_hours');
-    echo "<input type='number' name='simpelbokning_slot_length_hours' value='$slot_length_hours' />";
+    $slot_length_minutes = get_option('simpelbokning_slot_length_minutes');
+    echo "<input type='number' name='simpelbokning_slot_length_minutes' value='$slot_length_minutes' />";
 }
 
 function render_max_outstanding_bookings()
