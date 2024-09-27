@@ -9,6 +9,8 @@ global $wpdb;
 ?>
 
 <div id="simpelbokning">
+X<?=\get_option('simpelbokning_path_for_new_booking')?>Y
+X<?=\get_option('simpelbokning_message_for_non_bookable')?>Y
 <?php for ($week = 0; $week <= \get_option('simpelbokning_weeks_to_show'); $week++) {?>
     <table>
         <tr>
@@ -47,7 +49,7 @@ global $wpdb;
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '<form action="' . \get_option('simpelbokning_path_for_new_booking') . '" method="post"><input type="hidden" name="slot_start" value="' . $slot_start . '"><button type="submit">' . __('book this', 'simpelbokning') . '</button></form>';
+                            echo '<a href="' . \get_option('simpelbokning_path_for_new_booking') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
                         }
                     }
                     ?>

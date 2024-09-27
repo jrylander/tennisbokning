@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-26T12:53:41+00:00\n"
+"POT-Creation-Date: 2024-09-27T09:16:43+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: simpelbokning\n"
@@ -24,51 +24,56 @@ msgstr ""
 msgid "Simplest possible booking system"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:15
+#: current_bookings/current_bookings_view.php:17
 msgid "w"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:16
+#: current_bookings/current_bookings_view.php:18
 msgid "Monday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:17
+#: current_bookings/current_bookings_view.php:19
 msgid "Tuesday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:18
+#: current_bookings/current_bookings_view.php:20
 msgid "Wednesday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:19
+#: current_bookings/current_bookings_view.php:21
 msgid "Thursday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:20
+#: current_bookings/current_bookings_view.php:22
 msgid "Friday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:21
+#: current_bookings/current_bookings_view.php:23
 msgid "Saturday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:22
+#: current_bookings/current_bookings_view.php:24
 msgid "Sunday"
 msgstr ""
 
-#: current_bookings/current_bookings_view.php:50
+#: current_bookings/current_bookings_view.php:52
 msgid "book this"
 msgstr ""
 
-#: new_booking/new_booking_view.php:6
-msgid "Name"
-msgstr ""
-
-#: new_booking/new_booking_view.php:7
-msgid "Email"
+#: new_booking/new_booking_non_bookable_view.php:2
+#: new_booking/new_booking_view.php:2
+msgid "Time"
 msgstr ""
 
 #: new_booking/new_booking_view.php:8
+msgid "Name"
+msgstr ""
+
+#: new_booking/new_booking_view.php:9
+msgid "Email"
+msgstr ""
+
+#: new_booking/new_booking_view.php:10
 msgid "Submit"
 msgstr ""
 

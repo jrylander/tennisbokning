@@ -1,11 +1,9 @@
-# Copyright (C) 2024 
-# This file is distributed under the same license as the Simpel bokning plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simpel bokning\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/simpelbokning\n"
-"POT-Creation-Date: 2024-09-26T12:53:41+00:00\n"
-"PO-Revision-Date: 2024-09-26 14:54+0200\n"
+"POT-Creation-Date: 2024-09-27T09:16:43+00:00\n"
+"PO-Revision-Date: 2024-09-27 11:21+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -13,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.5\n"
-"X-Domain: simpelbokning\n"
+"X-Poedit-Basepath: .\n"
 
 #. Plugin Name of the plugin
 #: simpelbokning.php
@@ -25,55 +23,56 @@ msgstr "Simpel bokning"
 msgid "Simplest possible booking system"
 msgstr "Enklast möjliga bokningssystem"
 
-#: current_bookings/current_bookings_view.php:15
+#: current_bookings/current_bookings_view.php:17
 msgid "w"
 msgstr "v"
 
-#: current_bookings/current_bookings_view.php:16
+#: current_bookings/current_bookings_view.php:18
 msgid "Monday"
 msgstr "Måndag"
 
-#: current_bookings/current_bookings_view.php:17
+#: current_bookings/current_bookings_view.php:19
 msgid "Tuesday"
 msgstr "Tisdag"
 
-#: current_bookings/current_bookings_view.php:18
+#: current_bookings/current_bookings_view.php:20
 msgid "Wednesday"
 msgstr "Onsdag"
 
-#: current_bookings/current_bookings_view.php:19
+#: current_bookings/current_bookings_view.php:21
 msgid "Thursday"
 msgstr "Torsdag"
 
-#: current_bookings/current_bookings_view.php:20
+#: current_bookings/current_bookings_view.php:22
 msgid "Friday"
 msgstr "Fredag"
 
-#: current_bookings/current_bookings_view.php:21
+#: current_bookings/current_bookings_view.php:23
 msgid "Saturday"
 msgstr "Lördag"
 
-#: current_bookings/current_bookings_view.php:22
+#: current_bookings/current_bookings_view.php:24
 msgid "Sunday"
 msgstr "Söndag"
 
-#: current_bookings/current_bookings_view.php:50
+#: current_bookings/current_bookings_view.php:52
 msgid "book this"
 msgstr "boka tiden"
 
-#: new_booking/new_booking_view.php:5
+#: new_booking/new_booking_non_bookable_view.php:2
+#: new_booking/new_booking_view.php:2
+msgid "Time"
+msgstr "Tid"
+
+#: new_booking/new_booking_view.php:8
 msgid "Name"
 msgstr "Namn"
 
-#: new_booking/new_booking_view.php:6
-msgid "Name"
-msgstr "Namn"
-
-#: new_booking/new_booking_view.php:7
+#: new_booking/new_booking_view.php:9
 msgid "Email"
 msgstr "E-post"
 
-#: new_booking/new_booking_view.php:8
+#: new_booking/new_booking_view.php:10
 msgid "Submit"
 msgstr "Boka"
 
