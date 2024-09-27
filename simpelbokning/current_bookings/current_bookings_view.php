@@ -49,7 +49,7 @@ X<?=\get_option('simpelbokning_message_for_non_bookable')?>Y
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '<a href="' . \get_option('simpelbokning_path_for_new_booking') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
+                            echo '<a href="' . \get_option('simpelbokning_path_for_booking_form') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
                         }
                     }
                     ?>

@@ -4,9 +4,9 @@ namespace cc\rylander\simpelbokning;
 
 require_once dirname(__FILE__) . '/../utils.php';
 
-function new_booking()
+function booking_info()
 {
-    if (!empty($_GET['slot_start'])) {
+    if (!empty($_GET['booking_id'])) {
         $slot_start_as_epoch = $_GET['slot_start'];
 
         // Model for the views
@@ -15,9 +15,9 @@ function new_booking()
         $slot_end = new \DateTime("@$slot_end_as_epoch");
 
         if (!is_bookable($slot_start_as_epoch)) {
-            require_once dirname(__FILE__) . '/new_booking_non_bookable_view.php';
+            // redirect to error page from options
         } else {
-            require_once dirname(__FILE__) . '/new_booking_view.php';
+            require_once dirname(__FILE__) . '/booking_form_view.php';
         }
 
     }

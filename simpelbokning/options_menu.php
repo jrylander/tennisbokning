@@ -20,14 +20,20 @@ function add_menu()
 
 function register_settings()
 {
-    add_section();
+    add_sections();
     add_settings();
 }
 
-function add_section() {
+function add_sections() {
     add_settings_section(
-        'simpelbokning_section',
-        '',
+        'simpelbokning_rules_section',
+        __('Rules', 'simpelbokning'),
+        __NAMESPACE__ . '\render_section',
+        'simpelbokning'
+    );
+    add_settings_section(
+        'simpelbokning_paths_section',
+        __('Pages', 'simpelbokning'),
         __NAMESPACE__ . '\render_section',
         'simpelbokning'
     );
@@ -39,38 +45,43 @@ function render_section()
 }
 
 function add_settings() {
+    // Rules
     register_setting('simpelbokning', 'simpelbokning_name', array('default' => __('Tennis court', 'simpelbokning'), 'sanitize_callback' => 'sanitize_text_field'));
-    add_settings_field('simpelbokning_name', __('Name of the resource of the booking system', 'simpelbokning'), __NAMESPACE__ . '\render_name', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_name', __('Name of the resource of the booking system', 'simpelbokning'), __NAMESPACE__ . '\render_name', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_first_slot_hour', array('default' => 8, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_first_slot_hour'));
-    add_settings_field('simpelbokning_first_slot_hour', __('First timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_first_slot_hour', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_first_slot_hour', __('First timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_first_slot_hour', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_last_slot_hour', array('default' => 17, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_last_slot_hour'));
-    add_settings_field('simpelbokning_last_slot_hour', __('Last timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_last_slot_hour', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_last_slot_hour', __('Last timeslot (hour)', 'simpelbokning'), __NAMESPACE__ . '\render_last_slot_hour', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_slot_length_minutes', array('default' => 60, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_slot_length_minutes'));
-    add_settings_field('simpelbokning_slot_length_minutes', __('Length of timeslots in minutes', 'simpelbokning'), __NAMESPACE__ . '\render_slot_length_minutes', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_slot_length_minutes', __('Length of timeslots in minutes', 'simpelbokning'), __NAMESPACE__ . '\render_slot_length_minutes', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_max_outstanding_bookings', array('default' => 2, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_max_outstanding_bookings'));
-    add_settings_field('simpelbokning_max_outstanding_bookings', __('Max number of active bookings per user', 'simpelbokning'), __NAMESPACE__ . '\render_max_outstanding_bookings', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_max_outstanding_bookings', __('Max number of active bookings per user', 'simpelbokning'), __NAMESPACE__ . '\render_max_outstanding_bookings', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_max_days_bookable', array('default' => 14, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_max_days_bookable'));
-    add_settings_field('simpelbokning_max_days_bookable', __('Max number of days in the future that can be booked', 'simpelbokning'), __NAMESPACE__ . '\render_max_days_bookable', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_max_days_bookable', __('Max number of days in the future that can be booked', 'simpelbokning'), __NAMESPACE__ . '\render_max_days_bookable', 'simpelbokning', 'simpelbokning_rules_section');
 
     register_setting('simpelbokning', 'simpelbokning_weeks_to_show', array('default' => 2, 'sanitize_callback' =>  __NAMESPACE__ . '\sanitize_weeks_to_show'));
-    add_settings_field('simpelbokning_weeks_to_show', __('Number of weeks in the future to show for visitors', 'simpelbokning'), __NAMESPACE__ . '\render_weeks_to_show', 'simpelbokning', 'simpelbokning_section');
+    add_settings_field('simpelbokning_weeks_to_show', __('Number of weeks in the future to show for visitors', 'simpelbokning'), __NAMESPACE__ . '\render_weeks_to_show', 'simpelbokning', 'simpelbokning_rules_section');
 
-    register_setting('simpelbokning', 'simpelbokning_path_for_new_booking', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
-    add_settings_field('simpelbokning_path_for_new_booking', __('Path or URL to page for new booking', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_new_booking', 'simpelbokning', 'simpelbokning_section');
+    // Paths
+    register_setting('simpelbokning', 'simpelbokning_path_for_booking_form', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_booking_form', __('Address of booking form', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_booking_form', 'simpelbokning', 'simpelbokning_paths_section');
 
-    register_setting('simpelbokning', 'simpelbokning_path_for_new_booking_confirm_request', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
-    add_settings_field('simpelbokning_path_for_new_booking', __('Path or URL to page for displaying ', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_new_booking', 'simpelbokning', 'simpelbokning_section');
+    register_setting('simpelbokning', 'simpelbokning_path_for_booking_request', array('default' => '/book-request', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_booking_request', __('Address of page that displays reminder about confirming booking with link in email', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_booking_request', 'simpelbokning', 'simpelbokning_paths_section');
 
-    register_setting('simpelbokning', 'simpelbokning_path_for_new_booking_confirmation', array('default' => '/book', 'sanitize_callback' =>  'sanitize_text_field'));
-    add_settings_field('simpelbokning_path_for_new_booking', __('Path or URL to page for new booking', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_new_booking', 'simpelbokning', 'simpelbokning_section');
+    register_setting('simpelbokning', 'simpelbokning_path_for_booking_confirmation', array('default' => '/book-confirm', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_booking_confirmation', __('Address of booking confirmation form', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_booking_confirmation', 'simpelbokning', 'simpelbokning_paths_section');
 
-    register_setting('simpelbokning', 'simpelbokning_message_for_non_bookable', array('default' => __('This timeslot is not bookable', 'simpelbokning'), 'sanitize_callback' =>  'sanitize_text_field'));
-    add_settings_field('simpelbokning_message_for_non_bookable', __('Message to show for trying to book a non bookable timeslot', 'simpelbokning'), __NAMESPACE__ . '\render_message_for_non_bookable', 'simpelbokning', 'simpelbokning_section');
+    register_setting('simpelbokning', 'simpelbokning_path_for_booking_done', array('default' => '/book-done', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_booking_done', __('Address of page that is shown when booking is done', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_booking_done', 'simpelbokning', 'simpelbokning_paths_section');
+
+    register_setting('simpelbokning', 'simpelbokning_path_for_booking_error', array('default' => '/book-error', 'sanitize_callback' =>  'sanitize_text_field'));
+    add_settings_field('simpelbokning_path_for_booking_error', __('Address of page to show when booking cannot be done', 'simpelbokning'), __NAMESPACE__ . '\render_path_for_booking_error', 'simpelbokning', 'simpelbokning_paths_section');
 }
 
 function sanitize_first_slot_hour($input) {
@@ -171,16 +182,34 @@ function render_weeks_to_show()
     echo "<input type='number' name='simpelbokning_weeks_to_show' value='$weeks_to_show' />";
 }
 
-function render_path_for_new_booking()
+function render_path_for_booking_form()
 {
-    $path_for_new_booking = get_option('simpelbokning_path_for_new_booking');
-    echo "<input type='text' name='simpelbokning_path_for_new_booking' value='$path_for_new_booking' />";
+    $path_for_booking_form = get_option('simpelbokning_path_for_booking_form');
+    echo "<input type='text' name='simpelbokning_path_for_booking_form' value='$path_for_booking_form' />";
 }
 
-function render_message_for_non_bookable()
+function render_path_for_booking_request()
 {
-    $message_for_non_bookable = get_option('simpelbokning_message_for_non_bookable');
-    echo "<input type='text' name='simpelbokning_message_for_non_bookable' value='$message_for_non_bookable' />";
+    $path_for_booking_request = get_option('simpelbokning_path_for_booking_request');
+    echo "<input type='text' name='simpelbokning_path_for_booking_request' value='$path_for_booking_request' />";
+}
+
+function render_path_for_booking_confirmation()
+{
+    $path_for_booking_confirmation = get_option('simpelbokning_path_for_booking_confirmation');
+    echo "<input type='text' name='simpelbokning_path_for_booking_confirmation' value='$path_for_booking_confirmation' />";
+}
+
+function render_path_for_booking_done()
+{
+    $path_for_booking_done = get_option('simpelbokning_path_for_booking_done');
+    echo "<input type='text' name='simpelbokning_path_for_booking_done' value='$path_for_booking_done' />";
+}
+
+function render_path_for_booking_error()
+{
+    $path_for_booking_error = get_option('simpelbokning_path_for_booking_error');
+    echo "<input type='text' name='simpelbokning_path_for_booking_error' value='$path_for_booking_error' />";
 }
 
 function render_options_page()
@@ -188,5 +217,5 @@ function render_options_page()
     if (!current_user_can('manage_options')) {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }
-    require_once dirname(__FILE__) . '/views/options.php';
+    require_once dirname(__FILE__) . '/options_view.php';
 }
