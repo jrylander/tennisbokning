@@ -7,8 +7,7 @@ if ( is_admin() ) {
     add_action('admin_init', __NAMESPACE__ . '\register_settings');
 }
 
-function add_menu()
-{
+function add_menu(): void {
     add_options_page(
         __('Settings for Simple booking', 'simpelbokning'),
         __('Simple booking', 'simpelbokning'),
@@ -18,13 +17,12 @@ function add_menu()
     );
 }
 
-function register_settings()
-{
+function register_settings(): void {
     add_sections();
     add_settings();
 }
 
-function add_sections() {
+function add_sections(): void {
     add_settings_section(
         'simpelbokning_rules_section',
         __('Rules', 'simpelbokning'),
@@ -39,12 +37,11 @@ function add_sections() {
     );
 }
 
-function render_section()
-{
+function render_section(): void {
     echo '';
 }
 
-function add_settings() {
+function add_settings(): void {
     // Rules
     register_setting('simpelbokning', 'simpelbokning_name', array('default' => __('Tennis court', 'simpelbokning'), 'sanitize_callback' => 'sanitize_text_field'));
     add_settings_field('simpelbokning_name', __('Name of the resource of the booking system', 'simpelbokning'), __NAMESPACE__ . '\render_name', 'simpelbokning', 'simpelbokning_rules_section');
@@ -140,80 +137,67 @@ function sanitize_weeks_to_show($input) {
     return $old_value;
 }
 
-function render_name()
-{
+function render_name(): void {
     $name = get_option('simpelbokning_name');
     echo "<input type='text' name='simpelbokning_name' value='$name' />";
 }
 
-function render_first_slot_hour()
-{
+function render_first_slot_hour(): void {
     $first_slot_hour = get_option('simpelbokning_first_slot_hour');
     echo "<input type='number' name='simpelbokning_first_slot_hour' value='$first_slot_hour' />";
 }
 
-function render_last_slot_hour()
-{
+function render_last_slot_hour(): void {
     $last_slot_hour = get_option('simpelbokning_last_slot_hour');
     echo "<input type='number' name='simpelbokning_last_slot_hour' value='$last_slot_hour' />";
 }
 
-function render_slot_length_minutes()
-{
+function render_slot_length_minutes(): void {
     $slot_length_minutes = get_option('simpelbokning_slot_length_minutes');
     echo "<input type='number' name='simpelbokning_slot_length_minutes' value='$slot_length_minutes' />";
 }
 
-function render_max_outstanding_bookings()
-{
+function render_max_outstanding_bookings(): void {
     $max_outstanding_bookings = get_option('simpelbokning_max_outstanding_bookings');
     echo "<input type='number' name='simpelbokning_max_outstanding_bookings' value='$max_outstanding_bookings' />";
 }
 
-function render_max_days_bookable()
-{
+function render_max_days_bookable(): void {
     $max_days_bookable = get_option('simpelbokning_max_days_bookable');
     echo "<input type='number' name='simpelbokning_max_days_bookable' value='$max_days_bookable' />";
 }
 
-function render_weeks_to_show()
-{
+function render_weeks_to_show(): void {
     $weeks_to_show = get_option('simpelbokning_weeks_to_show');
     echo "<input type='number' name='simpelbokning_weeks_to_show' value='$weeks_to_show' />";
 }
 
-function render_path_for_booking_form()
-{
+function render_path_for_booking_form(): void {
     $path_for_booking_form = get_option('simpelbokning_path_for_booking_form');
     echo "<input type='text' name='simpelbokning_path_for_booking_form' value='$path_for_booking_form' />";
 }
 
-function render_path_for_booking_request()
-{
+function render_path_for_booking_request(): void {
     $path_for_booking_request = get_option('simpelbokning_path_for_booking_request');
     echo "<input type='text' name='simpelbokning_path_for_booking_request' value='$path_for_booking_request' />";
 }
 
-function render_path_for_booking_confirmation()
-{
+function render_path_for_booking_confirmation(): void {
     $path_for_booking_confirmation = get_option('simpelbokning_path_for_booking_confirmation');
     echo "<input type='text' name='simpelbokning_path_for_booking_confirmation' value='$path_for_booking_confirmation' />";
 }
 
-function render_path_for_booking_done()
-{
+function render_path_for_booking_done(): void {
     $path_for_booking_done = get_option('simpelbokning_path_for_booking_done');
     echo "<input type='text' name='simpelbokning_path_for_booking_done' value='$path_for_booking_done' />";
 }
 
-function render_path_for_booking_error()
-{
+function render_path_for_booking_error(): void {
     $path_for_booking_error = get_option('simpelbokning_path_for_booking_error');
     echo "<input type='text' name='simpelbokning_path_for_booking_error' value='$path_for_booking_error' />";
 }
 
-function render_options_page()
-{
+function render_options_page(): void {
     if (!current_user_can('manage_options')) {
         wp_die(__('You do not have sufficient permissions to access this page.'));
     }

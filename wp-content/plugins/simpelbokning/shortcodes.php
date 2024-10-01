@@ -9,8 +9,7 @@ require_once dirname(__FILE__) . '/booking_confirmation_form/booking_confirmatio
 
 add_action('init', __NAMESPACE__ . '\register_shortcodes');
 
-function register_shortcodes()
-{
+function register_shortcodes(): void {
     add_shortcode('simpelbokning_current_bookings', __NAMESPACE__ . '\current_bookings');
     add_shortcode('simpelbokning_booking_form', __NAMESPACE__ . '\booking_form');
     add_shortcode('simpelbokning_booking_info', __NAMESPACE__ . '\booking_info');

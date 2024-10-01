@@ -4,8 +4,7 @@ namespace cc\rylander\simpelbokning;
 
 add_action( 'admin_init', __NAMESPACE__ . '\db_install' );
 
-function db_install()
-{
+function db_install(): void {
     $db_version = '0.13';
 
     $version_setting = __NAMESPACE__ . '\db_version';

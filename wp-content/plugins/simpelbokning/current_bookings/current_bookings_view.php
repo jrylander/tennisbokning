@@ -1,22 +1,23 @@
 <?php
 namespace cc\rylander\simpelbokning;
 
-require_once dirname(__FILE__) . '/../utils.php';
+use DateTime;
+use function get_option;
 
-global $wpdb;
+require_once dirname(__FILE__) . '/../utils.php';
 
 /**
  * @var integer $this_week
  * @var integer $first_slot_hour
  * @var integer $last_slot_hour
- * @var \DateTime $now
+ * @var DateTime $now
  * @var integer $year
  * @var array $current_bookings
  */
 ?>
 
 <div id="simpelbokning">
-<?php for ($week = 0; $week <= \get_option('simpelbokning_weeks_to_show'); $week++) {?>
+<?php for ($week = 0; $week <= get_option('simpelbokning_weeks_to_show'); $week++) {?>
     <table>
         <tr>
             <th><?=__('w', 'simpelbokning')?><?= $this_week + $week ?></th>
@@ -33,9 +34,9 @@ global $wpdb;
             <td><?=$hour?></td>
             <?php
                 for ($day = 1; $day <= 7; $day++) {
-                    $this_hour = $now->setISODate($year, $this_week+$week, $day)->setTime($hour, 0, 0);
+                    $this_hour = $now->setISODate($year, $this_week+$week, $day)->setTime($hour, 0);
                     $slot_start = $this_hour->getTimestamp();
-                    $slot_end = $slot_start + \get_option('simpelbokning_slot_length_minutes') * 60;
+                    $slot_end = $slot_start + get_option('simpelbokning_slot_length_minutes') * 60;
                 ?>
                 <td style="border: 1px solid black;">
                     <?php
@@ -54,7 +55,7 @@ global $wpdb;
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            ?><a href="<?=\get_option('simpelbokning_path_for_booking_form')?>?slot_start=<?=$slot_start?>"><?=__('book this', 'simpelbokning')?></a>'<?php
+                            ?><a href="<?= get_option('simpelbokning_path_for_booking_form')?>?slot_start=<?=$slot_start?>"><?=__('book this', 'simpelbokning')?></a>'<?php
                         }
                     }
                     ?>
