@@ -1,27 +1,32 @@
 <?php
-
 namespace cc\rylander\simpelbokning;
 
 require_once dirname(__FILE__) . '/../utils.php';
 
 global $wpdb;
 
+/**
+ * @var integer $this_week
+ * @var integer $first_slot_hour
+ * @var integer $last_slot_hour
+ * @var \DateTime $now
+ * @var integer $year
+ * @var array $current_bookings
+ */
 ?>
 
 <div id="simpelbokning">
-X<?=\get_option('simpelbokning_path_for_new_booking')?>Y
-X<?=\get_option('simpelbokning_message_for_non_bookable')?>Y
 <?php for ($week = 0; $week <= \get_option('simpelbokning_weeks_to_show'); $week++) {?>
     <table>
         <tr>
             <th><?=__('w', 'simpelbokning')?><?= $this_week + $week ?></th>
-            <th style="width: 6em";><?=__('Monday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Tuesday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Wednesday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Thursday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Friday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Saturday', 'simpelbokning')?></th>
-            <th style="width: 6em";><?=__('Sunday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Monday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Tuesday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Wednesday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Thursday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Friday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Saturday', 'simpelbokning')?></th>
+            <th style="width: 6em"><?=__('Sunday', 'simpelbokning')?></th>
         </tr>
         <?php for ($hour = $first_slot_hour; $hour <= $last_slot_hour; $hour++) {?>
         <tr>
@@ -49,7 +54,7 @@ X<?=\get_option('simpelbokning_message_for_non_bookable')?>Y
                                 echo $booking->name . ' ';
                             }
                         } else {
-                            echo '<a href="' . \get_option('simpelbokning_path_for_booking_form') . '?slot_start=' . $slot_start . '">' . __('book this', 'simpelbokning') . '</a>';
+                            ?><a href="<?=\get_option('simpelbokning_path_for_booking_form')?>?slot_start=<?=$slot_start?>"><?=__('book this', 'simpelbokning')?></a>'<?php
                         }
                     }
                     ?>

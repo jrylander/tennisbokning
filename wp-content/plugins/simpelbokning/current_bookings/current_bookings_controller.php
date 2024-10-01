@@ -17,5 +17,7 @@ function current_bookings()
     $this_week = $now->format('W');
     $year = $now->format('Y');
 
+    ob_start();
     require_once dirname(__FILE__) . '/current_bookings_view.php';
+    return ob_get_clean();
 }
